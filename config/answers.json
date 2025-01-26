@@ -1,0 +1,40 @@
+[
+    {
+        "query": "banana",
+        "relevance_of_doc(s)": {
+            "../config/file1.txt": [
+                2
+            ],
+            "../config/file2.txt": [
+                3
+            ]
+        },
+        "results1": [
+            "../config/file2.txt",
+            "../config/file1.txt"
+        ]
+    },
+    {
+        "query": "ananas",
+        "relevance_of_doc(s)": {
+            "../config/file3.txt": [
+                2
+            ],
+            "../config/file4.txt": [
+                3
+            ],
+            "../config/file5.txt": [
+                1
+            ],
+            "../config/file6.txt": [
+                1
+            ]
+        },
+        "results2": [
+            "../config/file4.txt",
+            "../config/file3.txt",
+            "../config/file5.txt",
+            "../config/file6.txt"
+        ]
+    }
+]

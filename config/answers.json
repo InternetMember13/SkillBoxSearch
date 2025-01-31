@@ -1,17 +1,13 @@
 [
     {
-        "query": "banana",
+        "query": "apple",
         "relevance_of_doc(s)": {
-            "../config/file1.txt": [
-                2
-            ],
-            "../config/file2.txt": [
-                3
+            "../config/file4.txt": [
+                1
             ]
         },
         "results1": [
-            "../config/file2.txt",
-            "../config/file1.txt"
+            "../config/file4.txt"
         ]
     },
     {
@@ -35,6 +31,21 @@
             "../config/file3.txt",
             "../config/file5.txt",
             "../config/file6.txt"
+        ]
+    },
+    {
+        "query": "banana",
+        "relevance_of_doc(s)": {
+            "../config/file1.txt": [
+                2
+            ],
+            "../config/file2.txt": [
+                3
+            ]
+        },
+        "results3": [
+            "../config/file2.txt",
+            "../config/file1.txt"
         ]
     }
 ]

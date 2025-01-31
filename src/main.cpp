@@ -2,16 +2,9 @@
 #include <string>
 #include <nlohmann/json.hpp>
 #include <mutex>
-#include "Search.h"
+#include "../include/Search.h"
 #include <iostream>
 #include <future>
-#include "gtest/gtest.h"
-
-TEST(sample_test_case, sample_test)
-{
-EXPECT_EQ(1, 1);
-}
-
 
 using json = nlohmann::json;
 std::mutex mtx;

@@ -20,16 +20,11 @@ public:
         return index;
     }
 
-private:
-    std::vector<std::string> files;
-    std::string formula;
-    std::unordered_map<std::string, std::vector<std::string>> index;
-
-    void inverted_index() {
+void inverted_index() {
         for (const auto& filename : files) {
             std::ifstream file(filename);
             if (!file.is_open()) {
-                std::cerr << "File " << filename.substr(2) << " not found." << std::endl;
+                std::cerr << "File " << filename << " not found." << std::endl;
                 continue;
             }
             std::stringstream index_stream;
@@ -58,6 +53,11 @@ private:
         }
         return content;
     }
+
+private:
+    std::vector<std::string> files;
+    std::string formula;
+    std::unordered_map<std::string, std::vector<std::string>> index;
 };
 std::vector<std::string> process_query(const std::string& query) {
         std::istringstream iss(query);
@@ -68,4 +68,4 @@ std::vector<std::string> process_query(const std::string& query) {
         }
         return words;
     }
-#endif // INVERTED_INDEX_H
+#endif 

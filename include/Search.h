@@ -17,8 +17,6 @@ struct WordCountResult {
     int total_word_count;
     std::map<std::string, int> requested_word_frequencies;
 };
-
-
 class SearchServer {
 public:
     SearchServer(const ConfigLoader& config_loader)
@@ -26,22 +24,18 @@ public:
           formula(config_loader.get_formula()),
           max_responses(config_loader.get_max_responses()),
           indexer(FileIndexer(files, formula)) {}
-
     WordCountResult count_word_frequencies(const std::string& file_path, const std::vector<std::string>& requested_words) {
         std::ifstream file(file_path);
         std::string word;
         WordCountResult result = {0, {}};
-
         if (!file.is_open()) {
             std::cerr << "Error: Unable to open file " << file_path << std::endl;
             return result;
         }
-
         std::vector<std::string> lower_requested_words = requested_words;
         for (auto& words : lower_requested_words) {
             std::transform(words.begin(), words.end(), words.begin(), ::tolower);
         }
-
         while (file >> word) {
             word.erase(remove_if(word.begin(), word.end(), ispunct), word.end());
             if (!word.empty()) {
@@ -54,7 +48,6 @@ public:
         }
         return result;
     }
-    
 void search(const std::vector<std::string>& queries) {  
     std::ofstream file("../config/answers.json");  
     json results = json::array();  
@@ -73,7 +66,6 @@ void search(const std::vector<std::string>& queries) {
             }  
         }  
         std::vector<std::future<void>> futures;
-
     for (size_t j = 1; j < processed_queries.size(); ++j) {
         futures.push_back(std::async(std::launch::async, [&, j]() {
             auto it = indexer.get_index().find(processed_queries[j]);
@@ -93,7 +85,6 @@ void search(const std::vector<std::string>& queries) {
             }
         }));
     }
-
     for (auto& future : futures) {
         future.get();
     }

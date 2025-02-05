@@ -1,0 +1,16 @@
+{
+    "files": [
+        "../config/file1.txt",
+        "../config/file2.txt",
+        "../config/file3.txt",
+        "../config/file4.txt",
+        "../config/file5.txt",
+        "../config/file6.txt"
+    ],
+    "formula": "low",
+    "config": {
+        "name": "SkillboxSearchEngine",
+        "version": "0.9",
+        "max_responses": 5 
+    }
+}

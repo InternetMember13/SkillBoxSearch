@@ -14,7 +14,7 @@ TEST(FileIndexerTest, TestBasicIndexing) {
     create_temp_file("file2.txt", "big ben is the nickname for Great bell of striking clock");
 
     vector<string> files = {"file1.txt", "file2.txt"};
-    FileIndexer indexer(files, "low");  
+    FileIndexer indexer(files);  
 
     const auto& index = indexer.get_index();
 
@@ -29,7 +29,7 @@ TEST(FileIndexerTest, TestCaseInsensitiveIndexing) {
     create_temp_file("file2.txt", "water water WATER");
 
     vector<string> files = {"file1.txt", "file2.txt"};
-    FileIndexer indexer(files, "low");  
+    FileIndexer indexer(files);  
 
     const auto& index = indexer.get_index();
 
@@ -43,7 +43,7 @@ TEST(FileIndexerTest, TestCaseInsensitiveIndexing) {
 
 TEST(FileIndexerTest, TestNonExistentFile) {
     vector<string> files = {"nonexistent_file.txt"};
-    FileIndexer indexer(files, "low");  
+    FileIndexer indexer(files);  
 
     const auto& index = indexer.get_index();
     
@@ -55,7 +55,7 @@ TEST(FileIndexerTest, TestMultipleOccurrences) {
     create_temp_file("file1.txt", "milk milk milk water");
 
     vector<string> files = {"file1.txt"};
-    FileIndexer indexer(files, "low");  
+    FileIndexer indexer(files);  
 
     const auto& index = indexer.get_index();
 

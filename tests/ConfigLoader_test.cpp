@@ -10,7 +10,6 @@ protected:
         test_file << R"({
             "files": ["file1.txt", 
                       "file2.txt"],
-            "formula": "low",
             "config": {
                 "max_responses": 5
             }
@@ -30,10 +29,6 @@ TEST_F(ConfigLoaderTest, LoadFiles) {
     EXPECT_EQ(files.size(), 2);
     EXPECT_EQ(files[0], "file1.txt");
     EXPECT_EQ(files[1], "file2.txt");
-}
-
-TEST_F(ConfigLoaderTest, LoadFormula) {
-    EXPECT_EQ(config_loader->get_formula(), "low");
 }
 
 TEST_F(ConfigLoaderTest, LoadMaxResponses) {

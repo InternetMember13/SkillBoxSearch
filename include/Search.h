@@ -21,9 +21,8 @@ class SearchServer {
 public:
     SearchServer(const ConfigLoader& config_loader)
         : files(config_loader.get_files()),
-          formula(config_loader.get_formula()),
           max_responses(config_loader.get_max_responses()),
-          indexer(FileIndexer(files, formula)) {}
+          indexer(FileIndexer(files)) {}
     WordCountResult count_word_frequencies(const std::string& file_path, const std::vector<std::string>& requested_words) {
         std::ifstream file(file_path);
         std::string word;
@@ -120,7 +119,7 @@ void search(const std::vector<std::string>& queries) {
 
 private:
     std::vector<std::string> files;
-    std::string formula;
+    
     int max_responses;
     FileIndexer indexer;
 };

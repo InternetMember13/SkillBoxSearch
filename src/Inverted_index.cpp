@@ -1,7 +1,7 @@
 #include "Inverted_index.h"
 
-FileIndexer::FileIndexer(const std::vector<std::string>& files, const std::string& formula) 
-    : files(files), formula(formula) { 
+FileIndexer::FileIndexer(const std::vector<std::string>& files) 
+    : files(files) { 
     inverted_index(); 
 } 
 
@@ -33,13 +33,13 @@ void FileIndexer::index_file(const std::string& filename, const std::string& con
 } 
 
 std::string FileIndexer::process_content(const std::string& content) { 
-    if (formula == "low") { 
-        std::string lower_content = content; 
-        for (auto& c : lower_content) { 
+    
+        std::string text_content = content; 
+        for (auto& c : text_content) { 
             c = tolower(c); 
         } 
-        return lower_content; 
-    } 
+        return text_content; 
+    
     return content; 
 } 
 

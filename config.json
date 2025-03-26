@@ -6,8 +6,7 @@
         "../config/file4.txt",
         "../config/file5.txt",
         "../config/file6.txt"
-    ],
-    "formula": "low",
+    ],  
     "config": {
         "name": "SkillboxSearchEngine",
         "version": "0.9",

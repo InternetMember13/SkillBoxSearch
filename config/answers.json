@@ -39,29 +39,7 @@
         ]
     },
     {
-        "result_found": true,
-        "results4": [
-            {
-                "document": "../config/file1.txt",
-                "rank": 1.0
-            },
-            {
-                "document": "../config/file2.txt",
-                "rank": 0.526
-            }
-        ]
-    },
-    {
-        "result_found": true,
-        "results5": [
-            {
-                "document": "../config/file1.txt",
-                "rank": 1.0
-            },
-            {
-                "document": "../config/file2.txt",
-                "rank": 0.526
-            }
-        ]
+        "result_found": false,
+        "results4": []
     }
 ]

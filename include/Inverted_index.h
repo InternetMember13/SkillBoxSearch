@@ -11,7 +11,7 @@
 class FileIndexer { 
 public: 
     FileIndexer() = default; 
-    FileIndexer(const std::vector<std::string>& files, const std::string& formula); 
+    FileIndexer(const std::vector<std::string>& files); 
 
     const std::unordered_map<std::string, std::vector<std::string>>& get_index() const; 
 
@@ -21,7 +21,6 @@ private:
     std::string process_content(const std::string& content); 
 
     std::vector<std::string> files; 
-    std::string formula; 
     std::unordered_map<std::string, std::vector<std::string>> index; 
 }; 
 
